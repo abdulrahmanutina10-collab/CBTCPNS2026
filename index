@@ -833,7 +833,7 @@
            3. KONFIGURASI GOOGLE APPS SCRIPT, KREDENSIAL STAFF & APPLICATION STATE
            ===================================================================== */
         const API_CONFIG = {
-            BASE_URL: 'https://script.google.com/macros/s/AKfycbysj3fx101WHl22KoymsCnsSUE0gMP9T1aXD-nhDwKuEzft8YQ-GXxL7he4lcrFgKk-/exec',
+            BASE_URL: 'https://script.google.com/macros/s/AKfycbzHgqqt37CVnHPiU-Wegy6uwSwZYe2mfRd0sc1rbsvNp3hhPHO9roqIG2Z5wRWzZ1gEhw/exec',
             USE_BACKEND: true
         };
 
