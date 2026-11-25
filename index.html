@@ -189,27 +189,6 @@
                         <i data-lucide="log-in" class="w-4 h-4"></i> Masuk Sekarang
                     </button>
                 </form>
-
-                <!-- Quick Demo Credentials -->
-                <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-800 space-y-2">
-                    <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Akses Cepat Uji Coba:</div>
-                    <div id="quick-login-peserta" class="flex flex-wrap gap-2">
-                        <button type="button" onclick="fillDemoLogin('peserta', 'Abdul Rahman Utina', 'CPNS2026')" class="px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition">
-                            Isi Cepat Peserta (CPNS2026)
-                        </button>
-                    </div>
-                    <div id="quick-login-admin" class="hidden flex-wrap gap-2">
-                        <button type="button" onclick="fillDemoLogin('admin', 'superadmin', 'ADMIN2026')" class="px-3 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-600 dark:text-amber-400 border border-amber-500/30 text-xs font-semibold transition">
-                            Super Admin (ADMIN2026)
-                        </button>
-                        <button type="button" onclick="fillDemoLogin('admin', 'admin', 'ADMIN2026')" class="px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-xs font-semibold transition">
-                            Admin Ujian (ADMIN2026)
-                        </button>
-                        <button type="button" onclick="fillDemoLogin('admin', 'pengawas', 'PROCTOR2026')" class="px-3 py-1.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 text-xs font-semibold transition">
-                            Pengawas Ruang (PROCTOR2026)
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1264,8 +1243,6 @@
             const uLabel = document.getElementById('login-user-label');
             const uInput = document.getElementById('login-username');
             const pInput = document.getElementById('login-password');
-            const qP = document.getElementById('quick-login-peserta');
-            const qA = document.getElementById('quick-login-admin');
 
             uInput.value = '';
             pInput.value = '';
@@ -1278,30 +1255,16 @@
                 uLabel.textContent = 'Nama Lengkap Peserta';
                 uInput.placeholder = 'Contoh: Abdul Rahman Utina';
                 pInput.placeholder = 'Masukkan password: CPNS2026';
-                qP.classList.remove('hidden');
-                qP.classList.add('flex');
-                qA.classList.add('hidden');
-                qA.classList.remove('flex');
             } else {
                 btnA.className = 'py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition bg-amber-500 text-slate-950 shadow';
                 btnP.className = 'py-2.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-navy-800';
                 heading.textContent = 'Masuk Portal Admin & Pengawas';
-                sub.innerHTML = 'Akun petugas: <code class="px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-500 font-bold">superadmin</code> / <code class="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-500 font-bold">admin</code> (pw: <strong>ADMIN2026</strong>) atau <code class="px-1.5 py-0.5 rounded bg-cyan-500/15 text-cyan-500 font-bold">pengawas</code> (pw: <strong>PROCTOR2026</strong>).';
+                sub.innerHTML = 'Masukkan username dan password petugas untuk mengakses manajemen peserta, kontrol token ujian, monitoring, dan riwayat jawaban.';
                 uLabel.textContent = 'Username Petugas';
-                uInput.placeholder = 'superadmin / admin / pengawas';
+                uInput.placeholder = 'Masukkan username petugas';
                 pInput.placeholder = 'Masukkan password petugas';
-                qA.classList.remove('hidden');
-                qA.classList.add('flex');
-                qP.classList.add('hidden');
-                qP.classList.remove('flex');
             }
             lucide.createIcons();
-        }
-
-        function fillDemoLogin(portal, user, pass) {
-            setLoginPortal(portal);
-            document.getElementById('login-username').value = user;
-            document.getElementById('login-password').value = pass;
         }
 
         function togglePasswordVisibility() {
